@@ -1,0 +1,135 @@
+//
+//  RegisterViewController.swift
+//  FlashChat
+//
+//  Created by Игорь Клевжиц on 13.08.2024.
+//
+
+import UIKit
+import SnapKit
+
+enum AuthorizationType: String {
+    case register = "Register"
+    case logIn = "Log In"
+}
+
+class RegisterViewController: UIViewController {
+    
+    // MARK: - UI
+    
+    private lazy var mainStackView: UIStackView = {
+        let element = UIStackView()
+        element.axis = .vertical
+        element.spacing = 8
+        return element
+    }()
+    
+    private let emailTextField = UITextField(
+        placeholder: K.emailName,
+        color: UIColor(named: K.BrandColors.blue)
+    )
+    
+    private let passwordTextField = UITextField(
+        placeholder: K.passwordName,
+        color: .black
+    )
+    
+    private let registerButton = UIButton(titleColor: UIColor(named: K.BrandColors.blue))
+    
+    // MARK: - Public Properties
+    
+    var authorizationType: AuthorizationType?
+    
+    // MARK: - Life Cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setViews()
+        setupConstraints()
+    }
+    
+    @objc private func buttonsTapped(_ sender: UIButton) {
+        
+    }
+    
+    // MARK: - Set Views
+    
+    private func setViews() {
+        switch authorizationType {
+        case .register:
+            view.backgroundColor = .white
+            registerButton.setTitle(K.registerName, for: .normal)
+            navigationController?.navigationBar.tintColor = UIColor(named: K.BrandColors.blue)
+        case .logIn:
+            view.backgroundColor = UIColor(named: K.BrandColors.blue)
+            registerButton.setTitle(K.logInName, for: .normal)
+            registerButton.setTitleColor(.white, for: .normal)
+            navigationController?.navigationBar.tintColor = .white
+            
+            emailTextField.text = "1@2.com"
+            passwordTextField.text = "123456"
+        default: break
+        }
+        
+        view.addSubview(mainStackView)
+        
+        mainStackView.addArrangedSubview(emailTextField)
+        mainStackView.addArrangedSubview(passwordTextField)
+        mainStackView.addArrangedSubview(registerButton)
+        
+        emailTextField.makeShadow()
+        passwordTextField.makeShadow()
+    }
+
+}
+
+// MARK: - Setup Constraints
+
+extension RegisterViewController {
+    
+    private func setupConstraints() {
+        
+        mainStackView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        emailTextField.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.leading.trailing.equalTo(view).inset(36)
+        }
+        
+        passwordTextField.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.leading.trailing.equalTo(view).inset(36)
+        }
+        
+        registerButton.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.leading.trailing.equalTo(view).inset(36)
+        }
+    }
+    
+}
+
+extension UIView {
+    func makeShadow() {
+        self.layer.shadowColor = UIColor.lightGray.cgColor
+        self.layer.shadowOpacity = 0.4
+        self.layer.shadowOffset = CGSize(width: 0, height: 10)
+        self.layer.shadowRadius = 10
+    }
+}
+
+extension UITextField {
+    convenience init(placeholder: String, color: UIColor?) {
+        self.init()
+        self.placeholder = placeholder
+        self.textAlignment = .center
+        self.backgroundColor = .white
+        self.layer.cornerRadius = K.Size.textFieldCornerRadius
+        self.font = .systemFont(ofSize: 25)
+        self.textColor = color
+        self.tintColor = color
+    }
+}

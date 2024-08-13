@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		162423622C6BB9F7008243BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423612C6BB9F7008243BA /* Constants.swift */; };
+		162423652C6BBC77008243BA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 162423642C6BBC77008243BA /* SnapKit */; };
+		162423672C6BC3E0008243BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423662C6BC3E0008243BA /* RegisterViewController.swift */; };
 		1664693E2C6AE95400A40219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693D2C6AE95400A40219 /* AppDelegate.swift */; };
 		166469402C6AE95400A40219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693F2C6AE95400A40219 /* SceneDelegate.swift */; };
 		166469422C6AE95500A40219 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166469412C6AE95500A40219 /* WelcomeViewController.swift */; };
@@ -17,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		162423612C6BB9F7008243BA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		162423662C6BC3E0008243BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1664693A2C6AE95400A40219 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1664693D2C6AE95400A40219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1664693F2C6AE95400A40219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				162423652C6BBC77008243BA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +63,7 @@
 				1664693D2C6AE95400A40219 /* AppDelegate.swift */,
 				1664693F2C6AE95400A40219 /* SceneDelegate.swift */,
 				166469412C6AE95500A40219 /* WelcomeViewController.swift */,
+				162423662C6BC3E0008243BA /* RegisterViewController.swift */,
 				162423612C6BB9F7008243BA /* Constants.swift */,
 				166469462C6AE95800A40219 /* Assets.xcassets */,
 				166469482C6AE95800A40219 /* LaunchScreen.storyboard */,
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = FlashChat;
+			packageProductDependencies = (
+				162423642C6BBC77008243BA /* SnapKit */,
+			);
 			productName = FlashChat;
 			productReference = 1664693A2C6AE95400A40219 /* FlashChat.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 166469312C6AE95400A40219;
+			packageReferences = (
+				162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 1664693B2C6AE95400A40219 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				166469422C6AE95500A40219 /* WelcomeViewController.swift in Sources */,
+				162423672C6BC3E0008243BA /* RegisterViewController.swift in Sources */,
 				1664693E2C6AE95400A40219 /* AppDelegate.swift in Sources */,
 				166469402C6AE95400A40219 /* SceneDelegate.swift in Sources */,
 				162423622C6BB9F7008243BA /* Constants.swift in Sources */,
@@ -353,6 +365,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		162423642C6BBC77008243BA /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 166469322C6AE95400A40219 /* Project object */;
 }

@@ -36,10 +36,7 @@ class WelcomeViewController: UIViewController {
         
         setViews()
         setupConstraints()
-    }
-    
-    @objc private func buttonsTapped(_ sender: UIButton) {
-        
+        animationText()
     }
     
     // MARK: - Set Views
@@ -51,9 +48,34 @@ class WelcomeViewController: UIViewController {
         view.addSubview(registerButton)
         view.addSubview(logInButton)
         
-        titleLabel.text = K.appName
         registerButton.setTitle(K.registerName, for: .normal)
         logInButton.setTitle(K.logInName, for: .normal)
+        
+        registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
+        logInButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
+    }
+    
+    private func animationText() {
+        titleLabel.text = ""
+        let titleText = K.appName
+        
+        for letter in titleText.enumerated() {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * Double(letter.offset), repeats: false) { timer in
+                self.titleLabel.text! += String(letter.element)
+            }
+        }
+    }
+    
+    @objc private func buttonsTapped(_ sender: UIButton) {
+        let nextVC = RegisterViewController()
+        
+        if sender.currentTitle == K.registerName {
+            nextVC.authorizationType = .register
+        } else if sender.currentTitle == K.logInName {
+            nextVC.authorizationType = .logIn
+        }
+        
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 
 }
