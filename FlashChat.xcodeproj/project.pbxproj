@@ -10,6 +10,9 @@
 		162423622C6BB9F7008243BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423612C6BB9F7008243BA /* Constants.swift */; };
 		162423652C6BBC77008243BA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 162423642C6BBC77008243BA /* SnapKit */; };
 		162423672C6BC3E0008243BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423662C6BC3E0008243BA /* RegisterViewController.swift */; };
+		1624236E2C6BF0EE008243BA /* UIKit + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624236D2C6BF0EE008243BA /* UIKit + Extentions.swift */; };
+		162423702C6BF13E008243BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624236F2C6BF13E008243BA /* ChatViewController.swift */; };
+		162423732C6C11E9008243BA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423722C6C11E9008243BA /* Message.swift */; };
 		1664693E2C6AE95400A40219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693D2C6AE95400A40219 /* AppDelegate.swift */; };
 		166469402C6AE95400A40219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693F2C6AE95400A40219 /* SceneDelegate.swift */; };
 		166469422C6AE95500A40219 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166469412C6AE95500A40219 /* WelcomeViewController.swift */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		162423612C6BB9F7008243BA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		162423662C6BC3E0008243BA /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		1624236D2C6BF0EE008243BA /* UIKit + Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit + Extentions.swift"; sourceTree = "<group>"; };
+		1624236F2C6BF13E008243BA /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		162423722C6C11E9008243BA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		1664693A2C6AE95400A40219 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1664693D2C6AE95400A40219 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1664693F2C6AE95400A40219 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +47,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1624236A2C6BF09B008243BA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				166469412C6AE95500A40219 /* WelcomeViewController.swift */,
+				162423662C6BC3E0008243BA /* RegisterViewController.swift */,
+				1624236F2C6BF13E008243BA /* ChatViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1624236B2C6BF0A8008243BA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				162423612C6BB9F7008243BA /* Constants.swift */,
+				1624236D2C6BF0EE008243BA /* UIKit + Extentions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		162423712C6C11D3008243BA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				162423722C6C11E9008243BA /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		166469312C6AE95400A40219 = {
 			isa = PBXGroup;
 			children = (
@@ -62,9 +95,9 @@
 			children = (
 				1664693D2C6AE95400A40219 /* AppDelegate.swift */,
 				1664693F2C6AE95400A40219 /* SceneDelegate.swift */,
-				166469412C6AE95500A40219 /* WelcomeViewController.swift */,
-				162423662C6BC3E0008243BA /* RegisterViewController.swift */,
-				162423612C6BB9F7008243BA /* Constants.swift */,
+				162423712C6C11D3008243BA /* Model */,
+				1624236A2C6BF09B008243BA /* Controllers */,
+				1624236B2C6BF0A8008243BA /* Helpers */,
 				166469462C6AE95800A40219 /* Assets.xcassets */,
 				166469482C6AE95800A40219 /* LaunchScreen.storyboard */,
 				1664694B2C6AE95800A40219 /* Info.plist */,
@@ -151,6 +184,9 @@
 				166469422C6AE95500A40219 /* WelcomeViewController.swift in Sources */,
 				162423672C6BC3E0008243BA /* RegisterViewController.swift in Sources */,
 				1664693E2C6AE95400A40219 /* AppDelegate.swift in Sources */,
+				162423702C6BF13E008243BA /* ChatViewController.swift in Sources */,
+				1624236E2C6BF0EE008243BA /* UIKit + Extentions.swift in Sources */,
+				162423732C6C11E9008243BA /* Message.swift in Sources */,
 				166469402C6AE95400A40219 /* SceneDelegate.swift in Sources */,
 				162423622C6BB9F7008243BA /* Constants.swift in Sources */,
 			);
