@@ -76,9 +76,12 @@ class RegisterViewController: UIViewController {
         
         emailTextField.makeShadow()
         passwordTextField.makeShadow()
+        passwordTextField.isSecureTextEntry = true
         
         registerButton.addTarget(self, action: #selector(buttonsTapped), for: .touchUpInside)
     }
+    
+    // MARK: - Actions
     
     @objc private func buttonsTapped(_ sender: UIButton) {
         if sender.currentTitle == K.logInName {

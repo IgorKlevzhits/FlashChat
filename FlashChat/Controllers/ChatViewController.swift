@@ -38,7 +38,7 @@ class ChatViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    let messages = Message.getMessages()
+    var messages = Message.getMessages()
     
     // MARK: - Life Cycle
     
@@ -57,17 +57,35 @@ class ChatViewController: UIViewController {
         title = K.appName
         navigationController?.navigationBar.barTintColor = UIColor(named: K.BrandColors.purple)
         tableView.backgroundColor = .white
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.cellIdentifier)
+        tableView.register(MessageCell.self, forCellReuseIdentifier: K.cellIdentifier)
+        tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         view.addSubview(tableView)
         view.addSubview(containerView)
         
         containerView.addSubview(messageTextField)
         containerView.addSubview(enterButton)
+        
+        enterButton.addTarget(self, action: #selector(enterButtonPressed), for: .touchUpInside)
     }
+    
+    // MARK: - Set Delegates
     
     private func setDelegates() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    // MARK: - Actions
+    
+    @objc private func enterButtonPressed() {
+        if let text = messageTextField.text, !text.isEmpty {
+            messages.append(Message(sender: .me, body: text))
+            messageTextField.text = ""
+            tableView.reloadData()
+            let indexPath = IndexPath(row: messages.count - 1, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+        }
     }
     
 }
@@ -81,10 +99,10 @@ extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: K.cellIdentifier, for: indexPath) as? MessageCell else { fatalError() }
         
         let model = messages[indexPath.row]
-        cell.textLabel?.text = model.body
+        cell.configure(with: model)
         
         return cell
     }

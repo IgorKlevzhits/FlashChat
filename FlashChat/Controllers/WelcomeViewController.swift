@@ -66,6 +66,8 @@ class WelcomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
+    
     @objc private func buttonsTapped(_ sender: UIButton) {
         let nextVC = RegisterViewController()
         

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "MeAvatar.png",
+      "filename" : "56b6be07-39c3-4ce6-8f33-8562594b3d63.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "MeAvatar@2x.png",
+      "filename" : "56b6be07-39c3-4ce6-8f33-8562594b3d63@2x.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "MeAvatar@3x.png",
+      "filename" : "56b6be07-39c3-4ce6-8f33-8562594b3d63@3x.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }
