@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		162423622C6BB9F7008243BA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423612C6BB9F7008243BA /* Constants.swift */; };
-		162423652C6BBC77008243BA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 162423642C6BBC77008243BA /* SnapKit */; };
 		162423672C6BC3E0008243BA /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423662C6BC3E0008243BA /* RegisterViewController.swift */; };
 		1624236E2C6BF0EE008243BA /* UIKit + Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624236D2C6BF0EE008243BA /* UIKit + Extentions.swift */; };
 		162423702C6BF13E008243BA /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624236F2C6BF13E008243BA /* ChatViewController.swift */; };
 		162423732C6C11E9008243BA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423722C6C11E9008243BA /* Message.swift */; };
 		162423752C6C1417008243BA /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 162423742C6C1417008243BA /* MessageCell.swift */; };
+		162423792C6C2925008243BA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 162423782C6C2925008243BA /* SnapKit */; };
 		1664693E2C6AE95400A40219 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693D2C6AE95400A40219 /* AppDelegate.swift */; };
 		166469402C6AE95400A40219 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664693F2C6AE95400A40219 /* SceneDelegate.swift */; };
 		166469422C6AE95500A40219 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166469412C6AE95500A40219 /* WelcomeViewController.swift */; };
@@ -42,7 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				162423652C6BBC77008243BA /* SnapKit in Frameworks */,
+				162423792C6C2925008243BA /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +133,7 @@
 			);
 			name = FlashChat;
 			packageProductDependencies = (
-				162423642C6BBC77008243BA /* SnapKit */,
+				162423782C6C2925008243BA /* SnapKit */,
 			);
 			productName = FlashChat;
 			productReference = 1664693A2C6AE95400A40219 /* FlashChat.app */;
@@ -164,7 +164,7 @@
 			);
 			mainGroup = 166469312C6AE95400A40219;
 			packageReferences = (
-				162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */,
+				162423772C6C2925008243BA /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 1664693B2C6AE95400A40219 /* Products */;
 			projectDirPath = "";
@@ -415,7 +415,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		162423772C6C2925008243BA /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -426,9 +426,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		162423642C6BBC77008243BA /* SnapKit */ = {
+		162423782C6C2925008243BA /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 162423632C6BBC77008243BA /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 162423772C6C2925008243BA /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
