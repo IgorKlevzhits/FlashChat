@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import Firebase
+import FirebaseAuth
 
 enum AuthorizationType: String {
     case register = "Register"
@@ -63,8 +65,8 @@ class RegisterViewController: UIViewController {
             registerButton.setTitleColor(.white, for: .normal)
             navigationController?.navigationBar.tintColor = .white
             
-            emailTextField.text = "1@2.com"
-            passwordTextField.text = "123456"
+            emailTextField.text = "Klevzhits94@icloud.com"
+            passwordTextField.text = "333895"
         default: break
         }
         
@@ -85,11 +87,32 @@ class RegisterViewController: UIViewController {
     
     @objc private func buttonsTapped(_ sender: UIButton) {
         if sender.currentTitle == K.logInName {
-            let chatVC = ChatViewController()
+            guard let email = emailTextField.text,
+                  let password = passwordTextField.text else { return }
             
-            navigationController?.pushViewController(chatVC, animated: true)
-        } else if sender.currentTitle == K.registerName {
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let self = self else { return }
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    
+                    navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
+        } else {
+            guard let email = emailTextField.text,
+                  let password = passwordTextField.text else { return }
             
+            Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                if let e = error {
+                    print(e.localizedDescription)
+                } else {
+                    let chatVC = ChatViewController()
+                    
+                    self.navigationController?.pushViewController(chatVC, animated: true)
+                }
+            }
         }
     }
 

@@ -71,8 +71,8 @@ class MessageCell: UITableViewCell {
     
     // MARK: - Public Properties
     
-    func configure(with model: Message) {
-        switch model.sender {
+    func configure(with model: Message, sender: Sender) {
+        switch sender {
         case .me:
             leftImageView.isHidden = true
             rightImageView.isHidden = false
